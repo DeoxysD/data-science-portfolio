@@ -17,6 +17,12 @@ Python, pandas, scikit-learn, matplotlib, and Jupyter. On a Kaggle playground co
 
 Research question: can phone-use features predict the binary label `addicted_label`, and is a public-leaderboard gap of 0.00006 enough to choose the final model?
 
+**Purpose:** predict whether a person is labeled smartphone-addicted (`addicted_label`). Models are compared with ROC-AUC, not accuracy.
+
+**Main finding:** screen time already separates the classes. `daily_screen_time_hours` alone is about 0.890 AUC. The stacked model `mask_student` reaches 0.970158 on five-fold out-of-fold predictions, only 0.000135 above `mask_r3`.
+
+**Limitation:** the public leaderboard uses about 20% of the test set and ranks those two models in the opposite order, by only 0.00006. The zoomed panel makes that gap look large. The panel scaled from 0.5 to 1.0 shows that the gap is tiny.
+
 Screen time already carries most of the signal. On rows where the feature is observed, `daily_screen_time_hours` alone reaches about 0.890 ROC-AUC. A stacked model (`mask_student`) reaches 0.970158 on five-fold out-of-fold predictions, just above an earlier stack at 0.970023.
 
 ![Single-feature ROC-AUC compared with the stacked model]({{ site.baseurl }}/figures/03_single_feature_auc.png)
