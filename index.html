@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAN ZIQIAN · Data science portfolio</title>
+  <meta name="description" content="Portfolio of FAN ZIQIAN. London boroughs: crime rate and house prices, 2016–2018.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,460;6..72,560&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mist: #e7eeea;
+      --ink: #17211e;
+      --teal: #0c5c56;
+      --rule: #c5d4cd;
+      --paper: #f4f8f6;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--mist); color: var(--ink); }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.55;
+    }
+    main {
+      width: min(46rem, calc(100% - 2.5rem));
+      margin: 0 auto;
+      padding: 3.2rem 0 4.5rem;
+    }
+    header p {
+      margin: 0 0 1.4rem;
+      font-size: 1rem;
+    }
+    h1 {
+      margin: 0 0 1.5rem;
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 460;
+      font-size: clamp(2.1rem, 5vw, 3.15rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+    .result {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem 1.6rem;
+      align-items: baseline;
+      margin: 0 0 1.8rem;
+    }
+    .rho {
+      margin: 0;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 3.4rem;
+      line-height: 0.9;
+      color: var(--teal);
+      font-weight: 560;
+    }
+    .rho span {
+      display: block;
+      margin-top: 0.35rem;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .result p { margin: 0; }
+    figure {
+      margin: 0 0 1.8rem;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      padding: 0.6rem 0.6rem 0.2rem;
+    }
+    img { width: 100%; height: auto; display: block; }
+    figcaption {
+      padding: 0.7rem 0.35rem 0.55rem;
+      font-size: 0.98rem;
+    }
+    h2 {
+      margin: 2.2rem 0 0.6rem;
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 560;
+      font-size: 1.7rem;
+    }
+    a { color: var(--teal); }
+    a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+    ul { padding-left: 1.2rem; }
+    li + li { margin-top: 0.35rem; }
+    footer {
+      margin-top: 2.4rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+      font-size: 1rem;
+    }
+    @media (max-width: 640px) {
+      .result { grid-template-columns: 1fr; gap: 0.4rem; }
+      .rho { font-size: 2.8rem; }
+      main { width: min(46rem, calc(100% - 1.6rem)); padding-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p>FAN ZIQIAN · CISC7204 Class A · Team 05</p>
+      <h1>Do London boroughs with more crime have cheaper houses?</h1>
+    </header>
+
+    <section class="result" aria-label="Result">
+      <p class="rho">+0.47<span>Spearman ρ, n = 32</span></p>
+      <p>No. Across the 2016–2018 means of 32 boroughs, crimes per 1,000 residents move with average prices, not against them. The ordinary claim would have required a negative rank correlation. This one is positive.</p>
+    </section>
+
+    <figure>
+      <img src="figures/crime_vs_house_price.png" alt="Scatter plot of 32 London boroughs. Horizontal axis: recorded crimes per 1,000 residents, 2016 to 2018 mean. Vertical axis: average house price in thousands of pounds. Point colour is median resident salary. An upward ordinary-least-squares line runs from lower left to upper right. Westminster sits at the far right with both a high crime rate and a high price. Kensington and Chelsea is high on price and only mid-range on the crime rate. Bexley and Barking and Dagenham sit toward the lower left.">
+      <figcaption>Borough means, 2016–2018. Colour is median earnings. The line is a visual guide, not a forecast. Westminster is a high-leverage point: a very high crime rate and a very high price.</figcaption>
+    </figure>
+
+    <h2>How the number was made</h2>
+    <p>Two public tables are joined. The monthly Housing in London file supplies price and the crime total. The yearly file supplies population and median earnings. A borough-year is kept when crime is recorded for at least 10 months. The rate is crimes divided by population, times 1,000. The City of London is left out. The plotted points are means over 2016, 2017, and 2018.</p>
+    <p>Median earnings also move with prices (ρ = 0.51) and with the crime rate (ρ = 0.59). The raw crime count, without the population adjustment, only reaches ρ = 0.25. The pattern looks more like “central, higher-earning boroughs have both higher prices and more recorded offences” than like “crime makes housing cheaper.”</p>
+    <p>The correlation describes boroughs. It does not show that crime causes high prices, and it does not describe a street or a household.</p>
+    <ul>
+      <li><a href="https://github.com/DeoxysD/cisc7204-london-boroughs">Project repository</a> — notebook, the two source tables, the 32-borough summary, and this figure.</li>
+      <li><a href="https://www.kaggle.com/datasets/justinas/housing-in-london">Housing in London</a> on Kaggle, the working files.</li>
+      <li><a href="https://data.london.gov.uk/dataset/average-house-prices">GLA average house prices</a>, the Land Registry series used as the price authority.</li>
+    </ul>
+
+    <h2>What this project changed in how I work</h2>
+    <p>Through this data science project, I went through the complete workflow—from data understanding and data cleaning to exploratory data analysis (EDA), visualization, and modeling for prediction—which gave me a deeper understanding of "data-driven decision making." My biggest takeaway wasn't building a complex model, but rather learning to work backward from the business question to define the analysis path—figuring out what I want to answer before deciding which data to look at and which charts to make, instead of jumping straight to methods. During data cleaning, I realized that handling messy data is often more time-consuming than the analysis itself, and it tests patience and attention to detail even more. In the EDA stage, I learned to uncover patterns and anomalies through distributions, correlations, and group comparisons—many conclusions actually became clear in the process of plotting. Visualization taught me that a good chart can persuade people far better than a complicated description. Modeling for prediction showed me that a model is just one of the tools for answering questions, and it only works when data quality and problem definition are clear enough. I also recognized my shortcomings: I lack patience with messy data, I tend to draw conclusions by intuition without statistical validation, and my visualizations aren't concise enough. Going forward, I will strengthen my foundation in statistics and business understanding so that my analysis is better grounded, and avoid the trap of "just running tools without thinking about the problem." This project taught me that an excellent data scientist must understand both methods and the problem itself, and be able to communicate conclusions clearly.</p>
+    <p>The prediction comparison sits in a separate repository, <a href="https://github.com/DeoxysD/data-science-project">Predicting Smartphone Addiction</a>. Screen time alone reaches about 0.890 ROC-AUC, and a later stack reaches 0.970 on out-of-fold predictions. A public-leaderboard gap of 0.00006 is too small to choose the final model.</p>
+
+    <footer>
+      <p>Live portfolio for the CISC7204 individual registration. The London study is the semester project. The notebook that writes the figure is in the project repository.</p>
+    </footer>
+  </main>
+</body>
+</html>
