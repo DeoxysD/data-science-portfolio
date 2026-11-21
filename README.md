@@ -1,9 +1,7 @@
-# Data science portfolio
+# Portfolio
 
-Public site for FAN ZIQIAN, published with GitHub Pages from the `main` branch.
+Public site for Ziqian Fan, published with GitHub Pages from the `main` branch.
 
 Site: https://deoxysd.github.io/data-science-portfolio/
 
-Semester project: https://github.com/DeoxysD/cisc7204-london-boroughs
-
-Earlier prediction project: https://github.com/DeoxysD/data-science-project
+The page is the résumé, with the London borough study added under projects. The notebook for that study is https://github.com/DeoxysD/cisc7204-london-boroughs

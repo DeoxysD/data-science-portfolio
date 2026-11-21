@@ -3,136 +3,195 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAN ZIQIAN · Data science portfolio</title>
-  <meta name="description" content="Portfolio of FAN ZIQIAN. London boroughs: crime rate and house prices, 2016–2018.">
+  <title>Ziqian Fan · Portfolio</title>
+  <meta name="description" content="Portfolio of Ziqian Fan. Data science projects from antimicrobial peptide screening to crime and house prices in London.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,460;6..72,560&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,520;7..72,650&display=swap" rel="stylesheet">
   <style>
     :root {
-      --mist: #e7eeea;
-      --ink: #17211e;
-      --teal: #0c5c56;
-      --rule: #c5d4cd;
-      --paper: #f4f8f6;
+      --paper: #eef3f1;
+      --ink: #1a242c;
+      --quiet: #4e5c56;
+      --leaf: #1c6848;
+      --rule: #c9d5ce;
     }
     * { box-sizing: border-box; }
-    html { background: var(--mist); color: var(--ink); }
+    html { background: var(--paper); color: var(--ink); }
     body {
       margin: 0;
-      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-family: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
       font-size: 1.125rem;
       line-height: 1.55;
     }
     main {
-      width: min(46rem, calc(100% - 2.5rem));
+      width: min(42rem, calc(100% - 2.4rem));
       margin: 0 auto;
-      padding: 3.2rem 0 4.5rem;
-    }
-    header p {
-      margin: 0 0 1.4rem;
-      font-size: 1rem;
+      padding: 3rem 0 4.5rem;
     }
     h1 {
-      margin: 0 0 1.5rem;
-      font-family: Newsreader, Georgia, serif;
-      font-weight: 460;
-      font-size: clamp(2.1rem, 5vw, 3.15rem);
-      line-height: 1.12;
+      margin: 0;
+      font-family: Literata, Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      line-height: 1.05;
       letter-spacing: -0.02em;
     }
-    .result {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1.25rem 1.6rem;
-      align-items: baseline;
-      margin: 0 0 1.8rem;
+    .zh {
+      margin: 0.35rem 0 0;
+      font-family: Literata, Georgia, serif;
+      font-size: 1.35rem;
     }
-    .rho {
-      margin: 0;
-      font-family: Newsreader, Georgia, serif;
-      font-size: 3.4rem;
-      line-height: 0.9;
-      color: var(--teal);
-      font-weight: 560;
+    .lede {
+      margin: 1.15rem 0 0;
+      max-width: 38rem;
     }
-    .rho span {
-      display: block;
-      margin-top: 0.35rem;
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: var(--ink);
+    .contact {
+      margin: 0.8rem 0 0;
+      color: var(--quiet);
     }
-    .result p { margin: 0; }
+    .contact a { color: var(--leaf); }
+    h2 {
+      margin: 2.6rem 0 0.9rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--rule);
+      font-family: Literata, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.55rem;
+    }
+    article { margin: 0 0 1.7rem; }
+    h3 {
+      margin: 0 0 0.2rem;
+      font-family: Literata, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.22rem;
+      line-height: 1.3;
+    }
+    .where {
+      margin: 0 0 0.45rem;
+      color: var(--quiet);
+    }
+    ul { margin: 0.3rem 0 0; padding-left: 1.15rem; }
+    li + li { margin-top: 0.35rem; }
+    a { color: var(--leaf); }
+    a:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; }
     figure {
-      margin: 0 0 1.8rem;
-      background: var(--paper);
+      margin: 0.8rem 0 0;
+      background: #f7faf8;
       border: 1px solid var(--rule);
-      padding: 0.6rem 0.6rem 0.2rem;
+      padding: 0.45rem;
     }
     img { width: 100%; height: auto; display: block; }
     figcaption {
-      padding: 0.7rem 0.35rem 0.55rem;
-      font-size: 0.98rem;
-    }
-    h2 {
-      margin: 2.2rem 0 0.6rem;
-      font-family: Newsreader, Georgia, serif;
-      font-weight: 560;
-      font-size: 1.7rem;
-    }
-    a { color: var(--teal); }
-    a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
-    ul { padding-left: 1.2rem; }
-    li + li { margin-top: 0.35rem; }
-    footer {
-      margin-top: 2.4rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--rule);
+      padding: 0.55rem 0.2rem 0.25rem;
+      color: var(--quiet);
       font-size: 1rem;
     }
+    p { margin: 0.35rem 0; }
     @media (max-width: 640px) {
-      .result { grid-template-columns: 1fr; gap: 0.4rem; }
-      .rho { font-size: 2.8rem; }
-      main { width: min(46rem, calc(100% - 1.6rem)); padding-top: 2rem; }
+      main { width: min(42rem, calc(100% - 1.4rem)); padding-top: 1.8rem; }
     }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <p>FAN ZIQIAN · CISC7204 Class A · Team 05</p>
-      <h1>Do London boroughs with more crime have cheaper houses?</h1>
+      <h1>Ziqian Fan</h1>
+      <p class="zh">范子骞</p>
+      <p class="lede">I build data science projects from public tables and biological sequences: a peptide screen, a laboratory data pipeline, and a test of whether crime and house prices move together across London boroughs.</p>
+      <p class="contact">(+86) 19569939898<br><a href="mailto:mc63582@um.edu.mo">mc63582@um.edu.mo</a></p>
     </header>
 
-    <section class="result" aria-label="Result">
-      <p class="rho">+0.47<span>Spearman ρ, n = 32</span></p>
-      <p>No. Across the 2016–2018 means of 32 boroughs, crimes per 1,000 residents move with average prices, not against them. The ordinary claim would have required a negative rank correlation. This one is positive.</p>
-    </section>
+    <h2>Projects</h2>
 
-    <figure>
-      <img src="figures/crime_vs_house_price.png" alt="Scatter plot of 32 London boroughs. Horizontal axis: recorded crimes per 1,000 residents, 2016 to 2018 mean. Vertical axis: average house price in thousands of pounds. Point colour is median resident salary. An upward ordinary-least-squares line runs from lower left to upper right. Westminster sits at the far right with both a high crime rate and a high price. Kensington and Chelsea is high on price and only mid-range on the crime rate. Bexley and Barking and Dagenham sit toward the lower left.">
-      <figcaption>Borough means, 2016–2018. Colour is median earnings. The line is a visual guide, not a forecast. Westminster is a high-leverage point: a very high crime rate and a very high price.</figcaption>
-    </figure>
+    <article>
+      <h3>Crime and house prices in London boroughs</h3>
+      <p class="where">CISC7204 semester project, Class A, Team 05 · <a href="https://github.com/DeoxysD/cisc7204-london-boroughs">DeoxysD/cisc7204-london-boroughs</a></p>
+      <ul>
+        <li>Tested the claim that London boroughs with a higher recorded crime rate have lower average house prices. The comparison uses 2016–2018 means for 32 boroughs. The City of London is left out.</li>
+        <li>Joined the monthly Housing in London table with yearly population and earnings. A borough-year enters only when crime is recorded for at least 10 months. The rate is crimes divided by population, times 1,000.</li>
+        <li>Spearman’s ρ between the crime rate and average price is 0.47 (n = 32). The association is positive. Median earnings move with both prices (ρ = 0.51) and the crime rate (ρ = 0.59). The raw crime count, without the population adjustment, only reaches ρ = 0.25.</li>
+        <li>The result describes boroughs. It does not show that crime causes high prices, and it does not describe a street or a household.</li>
+      </ul>
+      <figure>
+        <img src="figures/crime_vs_house_price.png" alt="Scatter plot of 32 London boroughs. The horizontal axis is recorded crimes per 1,000 residents, 2016 to 2018 mean. The vertical axis is average house price in thousands of pounds. Point colour is median salary. An upward line shows that higher crime rates sit with higher prices. Westminster is far to the right. Kensington and Chelsea is high on price.">
+        <figcaption>Borough means, 2016–2018. Colour is median earnings. The line is a guide, not a forecast.</figcaption>
+      </figure>
+    </article>
 
-    <h2>How the number was made</h2>
-    <p>Two public tables are joined. The monthly Housing in London file supplies price and the crime total. The yearly file supplies population and median earnings. A borough-year is kept when crime is recorded for at least 10 months. The rate is crimes divided by population, times 1,000. The City of London is left out. The plotted points are means over 2016, 2017, and 2018.</p>
-    <p>Median earnings also move with prices (ρ = 0.51) and with the crime rate (ρ = 0.59). The raw crime count, without the population adjustment, only reaches ρ = 0.25. The pattern looks more like “central, higher-earning boroughs have both higher prices and more recorded offences” than like “crime makes housing cheaper.”</p>
-    <p>The correlation describes boroughs. It does not show that crime causes high prices, and it does not describe a street or a household.</p>
+    <article>
+      <h3>Antimicrobial peptide prediction with a multi-objective framework</h3>
+      <p class="where">Tongji University outstanding graduation thesis · <a href="https://github.com/DeoxysD/TJ_321AMP">DeoxysD/TJ_321AMP</a></p>
+      <ul>
+        <li>Designed a three-stage prediction framework: identify an antimicrobial peptide, analyse its spectrum, then assess toxicity. Screening becomes a sequence of classification decisions.</li>
+        <li>Integrated APD3, CAMP, dbAMP, and UniProt into a local warehouse of more than 60,000 samples. Sequence-length stratified sampling was used so class imbalance would not simply overfit the model.</li>
+        <li>Fine-tuned task-specific ProteinBERT models. Evaluation used sensitivity, specificity, F1, and AUROC, and classification thresholds were set by grid search.</li>
+        <li>Added a weighted linear score: the user sets a weight for each dimension, the scores are summed, and the peptides are ranked for that use.</li>
+        <li>The system returns both a class label and a probability, so a later decision can use either.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Disease-specific antimicrobial peptide prediction</h3>
+      <p class="where">Pioneer Forum science and technology scholarship, Nanmo Scholarship</p>
+      <ul>
+        <li>Collected disease-specific antimicrobial peptide records from PubMed, public databases, and experimental reports.</li>
+        <li>Cleaned the text, tokenized it, removed stop words, and lemmatized it, then extracted triples of peptide sequence, target pathogen, and MIC value.</li>
+        <li>Marked sequences as specific or not from the reported MIC and activity values. These labels are weak labels taken from text.</li>
+        <li>Built features with TF-IDF and n-grams for mechanism descriptions, and with ProtVec and one-hot encodings for the sequences.</li>
+        <li>Trained a random-forest classifier with stratified cross-validation and grid search, optimizing ROC-AUC. Class weights were used because the classes are uneven, and recall was treated as the priority. The output is a probability-ranked list of candidate sequences, read against the literature.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Data cleaning and visualization pipeline</h3>
+      <p class="where">Hanhe Biotechnology</p>
+      <ul>
+        <li>Governed experimental data from a synthetic-biology laboratory. Python filled missing values, flagged outliers, and normalized fields across batches, so the R&amp;D team could reuse one structured table.</li>
+        <li>Set field-level checks for numeric range and logical consistency, and sent anomalous records back to the researchers who produced them.</li>
+        <li>Built distribution plots, correlation heatmaps, and trend lines with Matplotlib and Seaborn, and wrote them into a standard report used to adjust protocols and process parameters.</li>
+      </ul>
+    </article>
+
+    <h2>Education</h2>
+    <article>
+      <h3>University of Macau</h3>
+      <p class="where">Institute of Artificial Intelligence and Brain Sciences, Macao SAR · M.Sc. in Data Science, in progress</p>
+      <p>Coursework includes data warehousing and data mining, databases and data analysis, machine learning theory, practical machine learning, data science programming, and data science and data visualization.</p>
+    </article>
+    <article>
+      <h3>Tongji University</h3>
+      <p class="where">School of Life Sciences and Technology, Shanghai · Ph.D. in Biology, discontinued</p>
+    </article>
+    <article>
+      <h3>Tongji University</h3>
+      <p class="where">School of Life Sciences and Technology, Shanghai · B.S. in Bioinformatics, GPA 4.11 / 5.0</p>
+      <p>Granted direct-track doctoral admission without the entrance examination.</p>
+    </article>
+
+    <h2>Publication</h2>
+    <p>Ying, X., Xue, G., Sun, P., Gan, Z., Fan, Z., Liu, B., Han, Y., Yang, J., Zhang, J., &amp; Lu, A. (2024). Antimicrobial peptides targeting Streptococcus mutans: Current research on design, screening and efficacy. <em>Current Microbiology, 81</em>, Article 18. <a href="https://doi.org/10.1007/s00284-023-03540-5">doi.org/10.1007/s00284-023-03540-5</a></p>
+    <p>Co-first author. Medical review. Published online 25 November 2023. Impact factor 2.8.</p>
+
+    <h2>Internships</h2>
+    <article>
+      <h3>Nanning Municipal Bureau of Agriculture and Rural Affairs</h3>
+      <p class="where">Intern, Economic Affairs Section</p>
+    </article>
+    <article>
+      <h3>Nanning Maternity and Child Health Hospital</h3>
+      <p class="where">Pharmaceutical sales information processing</p>
+    </article>
+
+    <h2>Honors</h2>
     <ul>
-      <li><a href="https://github.com/DeoxysD/cisc7204-london-boroughs">Project repository</a> — notebook, the two source tables, the 32-borough summary, and this figure.</li>
-      <li><a href="https://www.kaggle.com/datasets/justinas/housing-in-london">Housing in London</a> on Kaggle, the working files.</li>
-      <li><a href="https://data.london.gov.uk/dataset/average-house-prices">GLA average house prices</a>, the Land Registry series used as the price authority.</li>
+      <li>Outstanding graduation thesis, Tongji University, July 2024</li>
+      <li>Pioneer Forum science and technology scholarship, Nanmo Scholarship, Tongji University, June 2023</li>
+      <li>Third prize, outstanding undergraduate scholarship, Tongji University, December 2023</li>
+      <li>Outstanding student, Tongji University, December 2022</li>
+      <li>First prize, outstanding undergraduate scholarship, Tongji University, December 2022</li>
+      <li>Sports scholarship, Tongji University, 2022</li>
     </ul>
-
-    <h2>What this project changed in how I work</h2>
-    <p>Through this data science project, I went through the complete workflow—from data understanding and data cleaning to exploratory data analysis (EDA), visualization, and modeling for prediction—which gave me a deeper understanding of "data-driven decision making." My biggest takeaway wasn't building a complex model, but rather learning to work backward from the business question to define the analysis path—figuring out what I want to answer before deciding which data to look at and which charts to make, instead of jumping straight to methods. During data cleaning, I realized that handling messy data is often more time-consuming than the analysis itself, and it tests patience and attention to detail even more. In the EDA stage, I learned to uncover patterns and anomalies through distributions, correlations, and group comparisons—many conclusions actually became clear in the process of plotting. Visualization taught me that a good chart can persuade people far better than a complicated description. Modeling for prediction showed me that a model is just one of the tools for answering questions, and it only works when data quality and problem definition are clear enough. I also recognized my shortcomings: I lack patience with messy data, I tend to draw conclusions by intuition without statistical validation, and my visualizations aren't concise enough. Going forward, I will strengthen my foundation in statistics and business understanding so that my analysis is better grounded, and avoid the trap of "just running tools without thinking about the problem." This project taught me that an excellent data scientist must understand both methods and the problem itself, and be able to communicate conclusions clearly.</p>
-    <p>The prediction comparison sits in a separate repository, <a href="https://github.com/DeoxysD/data-science-project">Predicting Smartphone Addiction</a>. Screen time alone reaches about 0.890 ROC-AUC, and a later stack reaches 0.970 on out-of-fold predictions. A public-leaderboard gap of 0.00006 is too small to choose the final model.</p>
-
-    <footer>
-      <p>Live portfolio for the CISC7204 individual registration. The London study is the semester project. The notebook that writes the figure is in the project repository.</p>
-    </footer>
   </main>
 </body>
 </html>
