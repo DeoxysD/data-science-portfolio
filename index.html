@@ -67,6 +67,12 @@
       font-size: 1.22rem;
       line-height: 1.3;
     }
+    h4 {
+      margin: 1.15rem 0 0.25rem;
+      font-family: Literata, Georgia, serif;
+      font-weight: 650;
+      font-size: 1.05rem;
+    }
     .where {
       margin: 0 0 0.45rem;
       color: var(--quiet);
@@ -97,26 +103,58 @@
   <main>
     <header>
       <h1>Ziqian Fan</h1>
-      <p class="zh">范子骞</p>
+      <p class="zh">范子骞 · FANZIQIAN · MC63582</p>
       <p class="lede">I build data science projects from public tables and biological sequences: a peptide screen, a laboratory data pipeline, and a test of whether crime and house prices move together across London boroughs.</p>
-      <p class="contact">(+86) 19569939898<br><a href="mailto:mc63582@um.edu.mo">mc63582@um.edu.mo</a></p>
+      <p class="contact">CISC7204 Class A · <a href="mailto:mc63582@um.edu.mo">mc63582@um.edu.mo</a></p>
     </header>
+
+    <h2>Technical skills</h2>
+    <ul>
+      <li>Python, pandas, and NumPy for joining public tables and building a borough-year panel.</li>
+      <li>Rank correlation, including a partial Spearman correlation that removes median earnings.</li>
+      <li>Matplotlib charts with labelled axes, units, and the sample size on the figure.</li>
+      <li>Jupyter notebooks and GitHub documentation, so the same analysis can be run again from the README.</li>
+    </ul>
 
     <h2>Projects</h2>
 
     <article>
       <h3>Crime and house prices in London boroughs</h3>
-      <p class="where">CISC7204 semester project, Class A, Team 05 · <a href="https://github.com/DeoxysD/cisc7204-london-boroughs">DeoxysD/cisc7204-london-boroughs</a></p>
-      <ul>
-        <li>Tested the claim that London boroughs with a higher recorded crime rate have lower average house prices. The comparison uses 2016–2018 means for 32 boroughs. The City of London is left out.</li>
-        <li>Joined the monthly Housing in London table with yearly population and earnings. A borough-year enters only when crime is recorded for at least 10 months. The rate is crimes divided by population, times 1,000.</li>
-        <li>Spearman’s ρ between the crime rate and average price is 0.47 (n = 32). The association is positive. Median earnings move with both prices (ρ = 0.51) and the crime rate (ρ = 0.59). The raw crime count, without the population adjustment, only reaches ρ = 0.25.</li>
-        <li>The result describes boroughs. It does not show that crime causes high prices, and it does not describe a street or a household.</li>
-      </ul>
+      <p class="where">CISC7204 semester project, Class A, Team 05 · FANZIQIAN</p>
+
+      <h4>Research question</h4>
+      <p>In London, do boroughs with a higher recorded crime rate have lower average house prices?</p>
+
+      <h4>Approach</h4>
+      <p>I joined the monthly Housing in London table with yearly population and earnings. A borough-year enters only when crime is recorded for at least 10 months. The rate is crimes divided by population, times 1,000. The points are 2016–2018 means for 32 boroughs. The City of London is left out. Association is Spearman’s rank correlation.</p>
+
+      <h4>Visualizations</h4>
       <figure>
-        <img src="figures/crime_vs_house_price.png" alt="Scatter plot of 32 London boroughs. The horizontal axis is recorded crimes per 1,000 residents, 2016 to 2018 mean. The vertical axis is average house price in thousands of pounds. Point colour is median salary. An upward line shows that higher crime rates sit with higher prices. Westminster is far to the right. Kensington and Chelsea is high on price.">
+        <img src="figures/crime_vs_house_price.png" alt="Scatter plot of 32 London boroughs. The horizontal axis is recorded crimes per 1,000 residents, 2016 to 2018 mean. The vertical axis is average house price in thousands of pounds. Point colour is median salary. An upward line shows that higher crime rates sit with higher prices.">
         <figcaption>Borough means, 2016–2018. Colour is median earnings. The line is a guide, not a forecast.</figcaption>
       </figure>
+      <figure>
+        <img src="figures/earnings_on_both_sides.png" alt="Horizontal bar chart of four Spearman correlations for 32 London boroughs, 2016 to 2018. Crime rate versus price is 0.47. Median earnings versus price is 0.51. Crime rate versus earnings is 0.59. Crime count versus price is 0.25.">
+        <figcaption>The same 32 boroughs. The axis is Spearman ρ for every bar, because one comparison is crime against earnings rather than against price.</figcaption>
+      </figure>
+
+      <h4>Findings</h4>
+      <p>The claim does not hold on this cross-section. Spearman’s ρ between the crime rate and average price is 0.47 (n = 32). The association is positive. Median earnings move with prices (ρ = 0.51) and with the crime rate (ρ = 0.59). The raw crime count only reaches ρ = 0.25. After earnings are partialled out of the ranks, the crime–price correlation falls to 0.24.</p>
+
+      <h4>Limitation</h4>
+      <p>The result describes 32 boroughs in 2016–2018. It does not show that crime causes high prices, and it does not describe a street or a household. Earnings sit on both sides of the scatter, so the positive ρ is not a clean measure of crime.</p>
+
+      <h4>Project repository</h4>
+      <p><a href="https://github.com/DeoxysD/cisc7204-london-boroughs">DeoxysD/cisc7204-london-boroughs</a></p>
+
+      <h4>Status</h4>
+      <p>Ongoing. The 2016–2018 cross-section is in the repository. The team report is not finished.</p>
+    </article>
+
+    <article>
+      <h3>Predicting smartphone addiction</h3>
+      <p class="where">Practice repository · <a href="https://github.com/DeoxysD/data-science-project">DeoxysD/data-science-project</a> · Completed</p>
+      <p>Everyday phone-use features separate a binary addiction label. Daily screen time reaches about 0.89 AUC on its observed rows. A public-leaderboard gap of 0.00006 is too small to overturn the out-of-fold ranking. The training table stays on Kaggle under the competition rules and is not in the repository.</p>
     </article>
 
     <article>
