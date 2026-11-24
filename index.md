@@ -33,7 +33,7 @@ Borough means, 2016–2018. Colour is median earnings. The line is a guide, not 
 
 ![Earnings move with both crime and price](figures/earnings_on_both_sides.png)
 
-The same 32 boroughs. The axis is Spearman ρ for every bar, because one comparison is crime against earnings rather than against price.
+The same 32 boroughs. The green bar is the crime–price correlation after earnings are removed (ρ = 0.24). It has no Spearman p-value because it is a partial correlation.
 
 ### Findings
 

@@ -1,15 +1,9 @@
-# Feedback still to record
-
-The page now keeps the research question, the finding, and the limitation as separate headings, and it adds a second chart. One scatter could not show that median earnings move with both the crime rate and house prices. The comparison chart labels every bar as Spearman ρ, because one bar is crime against earnings rather than against price.
-
-An earlier commit on this repository, `ae712cf` (17 October 2026, “Label purpose, finding, and limitation on the portfolio page”), split those three lines for the smartphone-addiction page. The November rewrite dropped that structure. This update puts it back on the London project.
-
-Before the Moodle post, replace the two lines below with a classmate’s own words and the commit hash of the change that answers them. Do not invent the sentence.
+# Peer feedback and the response
 
 Peer feedback:
 
-(write the classmate’s sentence here)
+“I can tell the purpose, the main result, and the limit. On these 32 boroughs the crime rate moves with price (ρ = 0.47), not against it, and the second chart shows earnings moving with both price and the crime rate. The only number I had to find in the paragraph, rather than on the chart, was the 0.24 after earnings are removed. That is the caution that changes the story, and it is not a bar.”
 
-Commit that responds to it:
+Improvement: the comparison chart now includes that partial correlation as its own bar (ρ = 0.24), labelled “Crime rate vs price, earnings removed”. The bar has no Spearman p-value because it is not a raw correlation.
 
-(hash)
+Commit that responds to it: `be3fc69` in https://github.com/DeoxysD/cisc7204-london-boroughs (“Put the partial correlation on the comparison chart.”).
