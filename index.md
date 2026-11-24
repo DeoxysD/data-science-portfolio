@@ -51,6 +51,24 @@ The result describes 32 boroughs in 2016–2018. It does not show that crime cau
 
 Ongoing. The 2016–2018 cross-section is in the repository. The team report is not finished.
 
+## Coursework
+
+### Assignment 01 — Data analysis with Python
+
+FANZIQIAN · MC63582
+
+[DeoxysD/CISC7204-Assignment01-PAIR](https://github.com/DeoxysD/CISC7204-Assignment01-PAIR)
+
+Twelve notebooks follow one pipeline: import, clean, explore, model, and evaluate. Module 06 repeats that pipeline on insurance costs and on King County house prices. Write-up: [Readme.md](https://github.com/DeoxysD/CISC7204-Assignment01-PAIR/blob/main/Readme.md).
+
+### Assignment 02 — Data visualization with Python
+
+FANZIQIAN · MC63582
+
+[DeoxysD/CISC7204-MC63582-2026GitHub](https://github.com/DeoxysD/CISC7204-MC63582-2026GitHub)
+
+The labs and the final Dash project are in [cisc7204-Assgn02-2026-MC63582](https://github.com/DeoxysD/CISC7204-MC63582-2026GitHub/tree/main/cisc7204-Assgn02-2026-MC63582).
+
 ## Earlier project
 
 [Predicting smartphone addiction](https://github.com/DeoxysD/data-science-project) is completed. The training table is not in that repository. It stays on Kaggle under the competition rules.
