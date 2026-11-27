@@ -71,4 +71,4 @@ The labs and the final Dash project are in [cisc7204-Assgn02-2026-MC63582](https
 
 ## Earlier project
 
-[Predicting smartphone addiction](https://github.com/DeoxysD/data-science-project) is completed. The training table is not in that repository. It stays on Kaggle under the competition rules.
+[Predicting smartphone addiction](https://github.com/DeoxysD/data-science-project) uses a Kaggle competition as the case (Playground Series S6E8). The final ranking was in the top 15%. The training table is not in that repository. It stays on Kaggle under the competition rules.
